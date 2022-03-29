@@ -19,8 +19,7 @@ public class ItemRepositoryImpl implements ItemRespository {
 
     @Override
     public Long save(Item item) {
-
-        item.setItem_id(sequence++);
+        item.setItem_id(sequence+=1);
         store.put(item.getItem_id(), item);
         return item.getItem_id();
     }
