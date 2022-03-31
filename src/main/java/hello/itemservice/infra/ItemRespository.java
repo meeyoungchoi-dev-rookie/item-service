@@ -1,11 +1,16 @@
 package hello.itemservice.infra;
 
 import hello.itemservice.domain.item.dto.Item;
+import org.springframework.stereotype.Repository;
+
 
 import java.util.List;
 
+@Repository
 public interface ItemRespository {
     Long save(Item item);
+
+    Long createSequence();
 
     Item findById(Long itemId);
 
