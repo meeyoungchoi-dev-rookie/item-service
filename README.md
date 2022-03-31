@@ -16,6 +16,31 @@
 + 타임리프 환경설정
 + [타임리프 환경설정 에러 및 해결방법](https://unique-wandflower-4cc.notion.site/spring-boot-Thymeleaf-1e682c67a4e74cf9b0b0cc8cb26712e8)
 
+### 코드 리펙토링
+- 아이템관리 create시 시퀀스 생성 코드 리펙토링
+- 기존 : item 저장전 시퀀스 값 증가후 item 저장
+- 수정후 : service에서 item 추가전 먼저 시퀀스를 생성하여 item을 Map에 저장
 
+```java
+public Long save(Item item) {
+        Long sequence = createSequence();
+        item.setItem_id(sequence);
+        return itemRepository.save(item);
+    };
 
+```
+
+```java
+    public Long createSequence() {
+        return itemRepository.createSequence();
+    }
+```
+
+```java
+    @Override
+    public Long createSequence() {
+        return sequence += 1;
+    }
+
+```
 
