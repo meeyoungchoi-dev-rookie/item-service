@@ -2,6 +2,7 @@ package hello.itemservice.infra;
 
 import hello.itemservice.domain.item.dto.Item;
 
+import hello.itemservice.domain.item.repository.ItemRespository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 

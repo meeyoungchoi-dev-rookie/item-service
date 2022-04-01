@@ -1,4 +1,4 @@
-package hello.itemservice.infra;
+package hello.itemservice.domain.item.repository;
 
 import hello.itemservice.domain.item.dto.Item;
 import org.springframework.stereotype.Repository;
